@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-{#    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">#}
-    <link rel="stylesheet" href=../static/bootstrap/css/bootstrap.min.css>
     <title>Title</title>
 </head>
 <body>
@@ -17,7 +13,7 @@
                 </div>
             <form action="" method="post" class="form-inline">
                 {% csrf_token %}
-                <a class="btn btn-danger" href="{% url "add" %}" role="button">添加</a>
+                <a class="btn btn-danger" href="{% url "student_add" %}" role="button">添加</a>
                 <p></p>
 
                 <table class="table table-bordered table-hover">
@@ -35,14 +31,14 @@
                     {% for one in all %}
                         <tr>
                             <td>{{ one.id }}</td>
-                            <td>{{ one.user }}</td>
-                            <td>{{ one.title }}</td>
-                            <td>{{ one.content }}</td>
+                            <td>{{ one. }}</td>
+                            <td>{{ student.get_sex_display }}</td>
+                            <td>{{ student.birthday|date:"Y-m-d"}}</td>
 
                             <td>
-                                <span><a href="{% url "edit" one.id %}">编辑</a></span>
+                                <span><a href="{% url "student_edit" student.pk %}">编辑</a></span>
                                 |
-                                <span><a style="color:red;" href="{% url "delete" one.id %}">删除</a></span>
+                                <span><a style="color:red;" href="{% url "student_delete" student.pk %}">删除</a></span>
                             </td>
 
                         </tr>
