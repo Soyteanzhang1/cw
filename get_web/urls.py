@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^add/', views.operation,name='add'),
     url(r'^edit/(\d+)', views.operation,name='edit'),
     url(r'^delete/(\d+)', views.delete,name='delete'),
+    url(r'^login/', views.login,name='login'),
 
 
 ]

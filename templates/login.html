@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/style.css' %}">
+</head>
+<body>
+<div class="login-container">
+    <h1>登陆页面</h1>
+{#    <div class="connect">#}
+{#        <p style="left: 0%;">管理员:root    123</p>#}
+{#        <p style="left: 0%;">运维:zjl11    123</p>#}
+{#    </div>#}
+    <form action="" method="post" id="loginForm" novalidate="novalidate">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="username" class="username" placeholder="用户名" autocomplete="off" value="admin">
+        </div>
+        <div>
+            <input type="password" name="password" class="password" placeholder="密码" oncontextmenu="return false"
+                   onpaste="return false">
+        </div>
+        <p>{{ error }}</p>
+        <button id="submit" type="submit">登 陆</button>
+    </form>
+
+</div>
+
+
+<script src="{% static 'bootstrap/js/jquery.min.js' %}" type="text/javascript"></script>
+{#<script src="{% static 'js/jquery.min.js' %}"></script>#}
+
+<script src="{% static 'bootstrap/js/supersized.3.2.7.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/supersized-init.js' %}"></script>
+</body>
+</html>

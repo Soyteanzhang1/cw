@@ -23,3 +23,14 @@ def operation(request,id=None):
 def delete(request,id):
     models.Blog.objects.filter(pk=id).delete()
     return redirect(reverse('index'))
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        obj = models.User.objects.filter(user=username,pwd=password).first()
+        if obj:
+            # init_permission(request, obj)
+            return redirect(reverse('index'))
+
+    return render(request,'login.html')

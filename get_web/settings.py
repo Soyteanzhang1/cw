@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web.apps.WebConfig',
+    # 'rbac',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'rbac.middlewares.rbac.RbacMiddleWare',
 ]
 
 ROOT_URLCONF = 'get_web.urls'
@@ -127,3 +129,16 @@ STATICFILES_DIRS = [
 
 MAX_CUSTOMER_NUM = 50
 
+# WHITE_LIST = [
+#     r'^/login/$',
+# ]
+
+# NO_PERMISSION_LIST = [
+#     r'^index/',
+# ]
+
+# #权限的setting的key
+# PERMISSION_SESSION_KEY = 'permission'
+#
+# #菜单的setting的KEY
+# MEUN_SESSION_KEY = 'menu'
